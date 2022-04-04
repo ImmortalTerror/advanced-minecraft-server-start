@@ -2,6 +2,9 @@
 :: https://github.com/immortalterror
 @echo OFF
 
+set MaxRam=4G 
+set MinRam=2G
+set JarName=server.jar
 :loop
 
 :: World backup
@@ -22,7 +25,7 @@ echo [%TIME%] SERVER STARTING
 title Minecraft Server ^| Last restart: %DATE% %TIME%
 
 :: Change how much ram you want the server to have here
-java -Xmx2048M -Xms2048M -jar server.jar nogui
+java -Xmx%MaxRam% -Xms%MinRam% -jar %JarName% nogui
 
 title Minecraft Server ^| Server not running!
 echo Press control+C to exit the server!
